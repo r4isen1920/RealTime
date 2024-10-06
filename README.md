@@ -1,6 +1,6 @@
 # RealTime
 
-RealTime is an Add-On developed for Minecraft:Bedrock Edition. It features a custom item that allows players to view and manipulate other player's inventory. Based on Scripts API, and modifies JSON UI. Fully works on stable, does not use `player.json`, and requires no **Experiments** enabled.
+RealTime is an Add-On developed for Minecraft:Bedrock Edition. It syncs real life time into your Minecraft game. Fully customizable with built-in UI, simply sneak while holding a clock.
 
 ## Setting up the development environment
 
