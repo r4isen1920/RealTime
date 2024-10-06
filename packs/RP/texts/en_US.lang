@@ -1,0 +1,9 @@
+
+pack.name=§7[v1.0]§r RealTime [RP]
+pack.description=Syncs your real life time to your Minecraft world. Created by r4isen1920.
+
+gui.realtime.title=RealTime Options
+gui.realtime.enable=Enable RealTime
+gui.realtime.displayTime=Display time in actionbar
+gui.realtime.setTimezone=Set timezone:
+gui.realtime.easeTime=Time change easing time

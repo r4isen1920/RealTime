@@ -1,0 +1,156 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.2.json",
+	"author": "r4isen1920",
+	"name": "RealTime",
+	"packs": {
+		"behaviorPack": "./packs/BP",
+		"resourcePack": "./packs/RP"
+	},
+	"regolith": {
+		"dataPath": "./packs/data",
+		"filterDefinitions": {
+			"gametests": {
+				"url": "github.com/Bedrock-OSS/regolith-filters",
+				"version": "1.6.1"
+			},
+			"jsonte": {
+				"url": "github.com/MCDevKit/regolith-library",
+				"version": "2.14.0"
+			},
+			"packer": {
+				"url": "github.com/MCDevKit/regolith-library",
+				"version": "1.0.3"
+			}
+		},
+		"profiles": {
+			"default": {
+				"export": {
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": [
+					{
+						"arguments": [
+							"--silent"
+						],
+						"filter": "jsonte"
+					},
+					{
+						"filter": "gametests",
+						"settings": {
+							"buildOptions": {
+								"entryPoints": [
+									"data/gametests/src/main.ts"
+								],
+								"minify": false
+							},
+							"modules": [
+								"@minecraft/server@1.9.0",
+								"@minecraft/server-ui@1.1.0"
+							],
+							"outfile": "BP/scripts/xp/fpack/main.js"
+						}
+					}
+				]
+			},
+			"pack": {
+				"export": {
+					"target": "local"
+				},
+				"filters": [
+					{
+						"filter": "jsonte"
+					},
+					{
+						"filter": "gametests",
+						"settings": {
+							"buildOptions": {
+								"entryPoints": [
+									"data/gametests/src/main.ts"
+								],
+								"dropLabels": [
+									"LOGGING"
+								],
+								"minify": true
+							},
+							"modules": [
+								"@minecraft/server@1.9.0",
+								"@minecraft/server-ui@1.1.0"
+							],
+							"outfile": "BP/scripts/xp/fpack/main.js"
+						}
+					},
+					{
+						"filter": "packer",
+						"settings": {
+							"output": "${config.name}.mcaddon"
+						}
+					}
+				]
+			},
+			"pack-dev": {
+				"export": {
+					"target": "local"
+				},
+				"filters": [
+					{
+						"filter": "jsonte"
+					},
+					{
+						"filter": "gametests",
+						"settings": {
+							"buildOptions": {
+								"entryPoints": [
+									"data/gametests/src/main.ts"
+								],
+								"minify": false
+							},
+							"modules": [
+								"@minecraft/server@1.9.0",
+								"@minecraft/server-ui@1.1.0"
+							],
+							"outfile": "BP/scripts/xp/fpack/main.js"
+						}
+					},
+					{
+						"filter": "packer",
+						"settings": {
+							"output": "${config.name}-dev.mcaddon"
+						}
+					}
+				]
+			},
+			"run-release": {
+				"export": {
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": [
+					{
+						"arguments": [
+							"--silent"
+						],
+						"filter": "jsonte"
+					},
+					{
+						"filter": "gametests",
+						"settings": {
+							"buildOptions": {
+								"entryPoints": [
+									"data/gametests/src/main.ts"
+								],
+								"minify": false
+							},
+							"modules": [
+								"@minecraft/server@1.9.0",
+								"@minecraft/server-ui@1.1.0"
+							],
+							
+							"outfile": "BP/scripts/xp/fpack/main.js"
+						}
+					}
+				]
+			}
+		}
+	}
+}

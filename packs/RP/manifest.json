@@ -1,0 +1,28 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "ee2740af-8586-4841-ad99-80d7c7d45ee1",
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 20, 70 ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "description": "Resource Pack",
+      "uuid": "92ea75dd-4d20-49d8-9c04-d11e3ab111a6",
+      "version": [ 1, 0, 0 ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "086b1a68-deb9-4fbd-ba6b-11bf0eb1d6bb",
+      "version": [ 1, 0, 0 ]
+    }
+  ],
+  "metadata": {
+    "authors": [ "r4isen1920" ],
+    "url": "https://mcpedl.com/user/r4isen1920"
+  }
+}
